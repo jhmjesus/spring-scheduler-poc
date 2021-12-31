@@ -1,0 +1,40 @@
+#desabilitado para controle do disparo do job
+spring:
+  batch:
+    job:
+      enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: true
+# datasource - origem
+origem:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_cliente
+    username: ouser
+    password: ouser
+    driver-class-name: com.mysql.jdbc.Driver
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+  # datasource - destino
+destino:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_pessoa
+    username: duser
+    password: duser
+    driver-class: com.mysql.jdbc.Driver
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+  # datasource - batch
+batch:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_batch
+    username: batch
+    password: batch
+    driver-class-name: com.mysql.jdbc.Driver
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+  #logging
+logging:
+  level: error
+    org.springframework.data: debug
+
